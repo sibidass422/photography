@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Nantha Photo Studio | Premium Frames & Cinematic Edits</title>
+  <!-- Google Fonts (Fancy + Tamil friendly) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fef9f5;
+      color: #1e1e2a;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* fancy text styles */
+    .fancy-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .cursive-accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #f0e4dc; }
+    ::-webkit-scrollbar-thumb { background: #C33764; border-radius: 10px; }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* mobile first adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 18px;
+      }
+    }
+
+    /* navbar responsive */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-bottom: 2px solid rgba(195, 55, 100, 0.15);
+      gap: 12px;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #C33764, #B86B3E);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Playfair Display', serif;
+    }
+    .logo p {
+      font-size: 0.7rem;
+      color: #b45a3b;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c2c38;
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+    .nav-links a:hover {
+      color: #C33764;
+    }
+
+    /* hero section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 40px 0 60px;
+    }
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+        margin: 60px 0 100px;
+      }
+    }
+    .hero-content {
+      flex: 1;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .hero-content {
+        text-align: left;
+      }
+    }
+    .hero-content .badge {
+      background: rgba(195, 55, 100, 0.12);
+      padding: 5px 14px;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #C33764;
+      border-left: 3px solid #C33764;
+      margin-bottom: 12px;
+    }
+    .hero-content h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #C33764, #E2725B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 15px 0;
+      font-family: 'Playfair Display', serif;
+    }
+    @media (min-width: 768px) {
+      .hero-content h2 {
+        font-size: 3.8rem;
+      }
+    }
+    .hero-content p {
+      font-size: 1rem;
+      color: #4b4b5a;
+      line-height: 1.5;
+    }
+    .btn-group {
+      margin-top: 30px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 768px) {
+      .btn-group {
+        justify-content: flex-start;
+      }
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 700;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    .btn-primary {
+      background: #C33764;
+      color: white;
+      box-shadow: 0 6px 14px rgba(195, 55, 100, 0.3);
+    }
+    .btn-primary:hover {
+      background: #a32c52;
+      transform: translateY(-3px);
+    }
+    .btn-outline {
+      border: 2px solid #C33764;
+      color: #C33764;
+      background: transparent;
+    }
+    .hero-media {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .floating-frame {
+      background: #fff2ec;
+      padding: 10px;
+      border-radius: 40px;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 380px;
+    }
+    .floating-frame img {
+      width: 100%;
+      border-radius: 32px;
+      height: auto;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    /* stats row - mobile friendly */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      background: #fff4ef;
+      border-radius: 50px;
+      padding: 30px 20px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    @media (min-width: 640px) {
+      .stats-row {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 45px 30px;
+      }
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #C33764, #E2725B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Playfair Display', serif;
+    }
+    .stat-item p {
+      color: #6b4c3b;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    /* section titles fancy */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 60px 0 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    .gradient-text {
+      background: linear-gradient(120deg, #C33764, #E2725B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* services grid with enhanced box animation */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .service-card {
+      background: white;
+      border-radius: 32px;
+      padding: 30px 18px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+      border: 1px solid rgba(195,55,100,0.1);
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+    .service-card:nth-child(4) { animation-delay: 0.4s; }
+    .service-card:nth-child(5) { animation-delay: 0.5s; }
+    .service-card:nth-child(6) { animation-delay: 0.6s; }
+    
+    .service-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 35px -12px rgba(195,55,100,0.3);
+      border-color: rgba(195,55,100,0.3);
+    }
+    .service-card i {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #C33764, #E2725B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+    .service-card:hover i {
+      transform: scale(1.1);
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 8px;
+    }
+
+    /* frame gallery with beautiful box animations */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 40px 0;
+    }
+    .frame-item {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .frame-item:nth-child(1) { animation-delay: 0.1s; }
+    .frame-item:nth-child(2) { animation-delay: 0.2s; }
+    .frame-item:nth-child(3) { animation-delay: 0.3s; }
+    .frame-item:nth-child(4) { animation-delay: 0.4s; }
+    .frame-item:nth-child(5) { animation-delay: 0.5s; }
+    .frame-item:nth-child(6) { animation-delay: 0.6s; }
+    
+    .frame-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 30px -10px rgba(195,55,100,0.3);
+    }
+    .frame-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .frame-item:hover img {
+      transform: scale(1.05);
+    }
+    .frame-info {
+      padding: 18px;
+    }
+    .size-badge {
+      background: #fee2d6;
+      color: #C33764;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .frame-item:hover .size-badge {
+      background: #C33764;
+      color: white;
+    }
+
+    /* editing sections with animation */
+    .editing-premium {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      background: #fff4ef;
+      border-radius: 48px;
+      padding: 35px 25px;
+      margin: 50px 0;
+      transition: all 0.5s ease;
+      animation: slideInLeft 0.6s ease-out forwards;
+    }
+    .editing-premium:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(195,55,100,0.15);
+    }
+    @media (min-width: 768px) {
+      .editing-premium {
+        flex-direction: row;
+        align-items: center;
+        padding: 50px;
+      }
+    }
+    .editing-img img {
+      width: 100%;
+      border-radius: 32px;
+      max-width: 100%;
+      transition: transform 0.4s;
+    }
+    .editing-img img:hover {
+      transform: scale(1.02);
+    }
+    .badge-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .badge-list span {
+      background: white;
+      padding: 5px 16px;
+      border-radius: 40px;
+      color: #C33764;
+      font-weight: 600;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+    .badge-list span:hover {
+      background: #C33764;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* offer banner animation */
+    .offer-banner {
+      background: linear-gradient(115deg, #C33764, #E2725B);
+      border-radius: 40px;
+      padding: 35px 20px;
+      text-align: center;
+      margin: 40px 0;
+      color: white;
+      transition: all 0.4s;
+      animation: pulseGlow 2s infinite;
+    }
+    .offer-banner:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 35px rgba(195,55,100,0.4);
+    }
+    .offer-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 12px 0;
+    }
+    @media (min-width: 768px) {
+      .offer-banner h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* testimonial cards animation */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin: 40px 0;
+    }
+    @media (min-width: 640px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .testi-card {
+      background: white;
+      border-radius: 32px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #ffe0d2;
+      transition: all 0.4s ease;
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .testi-card:nth-child(1) { animation-delay: 0.1s; }
+    .testi-card:nth-child(2) { animation-delay: 0.2s; }
+    .testi-card:nth-child(3) { animation-delay: 0.3s; }
+    .testi-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(195,55,100,0.12);
+      border-color: rgba(195,55,100,0.3);
+    }
+    .testi-card i.fa-star {
+      color: #C33764;
+      margin-bottom: 12px;
+    }
+
+    /* contact glass card animation */
+    .glass-card {
+      background: rgba(255, 245, 240, 0.9);
+      backdrop-filter: blur(8px);
+      border-radius: 48px;
+      padding: 35px 20px;
+      margin: 60px 0;
+      text-align: center;
+      border: 1px solid rgba(195,55,100,0.2);
+      transition: all 0.4s;
+      animation: fadeInScale 0.7s ease-out forwards;
+    }
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 35px rgba(195,55,100,0.15);
+      border-color: rgba(195,55,100,0.4);
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      margin: 25px 0;
+    }
+    @media (min-width: 550px) {
+      .input-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+    .input-group input {
+      padding: 14px 20px;
+      border-radius: 60px;
+      background: #fff0e8;
+      border: 1px solid #ffccbb;
+      width: 100%;
+      max-width: 260px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: all 0.3s;
+    }
+    .input-group input:focus {
+      border-color: #C33764;
+      box-shadow: 0 0 0 3px rgba(195,55,100,0.2);
+      transform: scale(1.02);
+    }
+
+    /* floating buttons animation */
+    .float-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #C33764;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 14px rgba(195,55,100,0.5);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      font-size: 26px;
+      animation: bounceSoft 2s infinite;
+    }
+    .float-btn:hover {
+      transform: scale(1.12) rotate(5deg);
+      background: #a32c52;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes bounceSoft {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 5px 20px rgba(195,55,100,0.3);
+      }
+      50% {
+        box-shadow: 0 8px 30px rgba(195,55,100,0.6);
+      }
+    }
+
+    footer {
+      background: #1e1e2a;
+      color: #ddd;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+      border-radius: 35px 35px 0 0;
+    }
+    .footer-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .footer-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">
+      <h1>📸 NANTHA STUDIO</h1>
+      <p>FRAMES | WEDDING | BIRTHDAY | EDITS</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#frames">FRAMES</a></li>
+      <li><a href="#editing">EDITING</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <div class="container" id="home">
+    <div class="hero">
+      <div class="hero-content" data-aos="fade-right">
+        <div class="badge">✨ Since 2020 — Premium Studio ✨</div>
+        <h2 class="fancy-title">Wedding • Birthday <br> <span class="cursive-accent">All Photo Shoots</span></h2>
+        <p>Luxury frames, cinematic video editing, professional photo retouch — all sizes custom made. Nantha Studio captures your legacy.</p>
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-heart"></i> Book Now</a>
+          <a href="#frames" class="btn btn-outline"><i class="fas fa-frame"></i> View Frames</a>
+        </div>
+      </div>
+      <div class="hero-media" data-aos="fade-left">
+        <div class="floating-frame">
+          <img src="https://images.unsplash.com/photo-1603574670812-d24560880210?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGhvdG9ncmFwaGVyfGVufDB8fDB8fHww" alt="Wedding couple - Nantha Studio">
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-number" data-count="1580">0</div><p>Happy Clients</p></div>
+      <div class="stat-item"><div class="stat-number" data-count="4300">0</div><p>Frames Delivered</p></div>
+      <div class="stat-item"><div class="stat-number" data-count="620">0</div><p>Birthday Shoots</p></div>
+      <div class="stat-item"><div class="stat-number" data-count="320">0</div><p>Video Edits</p></div>
+    </div>
+  </div>
+
+  <div class="container" id="services">
+    <div class="section-title fancy-title"><span class="gradient-text">Our Signature Services</span></div>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-ring"></i><h3>Wedding Shoot</h3><p>Candid, traditional & cinematic storytelling.</p></div>
+      <div class="service-card"><i class="fas fa-birthday-cake"></i><h3>Birthday Shoot</h3><p>Fun, vibrant portraits & group frames.</p></div>
+      <div class="service-card"><i class="fas fa-camera-retro"></i><h3>All Events</h3><p>Anniversary, Maternity, Baby Shower & more.</p></div>
+      <div class="service-card"><i class="fas fa-video"></i><h3>Video Editing</h3><p>Wedding highlights, cinematic reels.</p></div>
+      <div class="service-card"><i class="fas fa-magic"></i><h3>Photo Editing</h3><p>Retouching, background removal, skin smoothing.</p></div>
+      <div class="service-card"><i class="fas fa-expand-alt"></i><h3>All Sizes</h3><p>Wallet to large wall frames, custom dimensions.</p></div>
+    </div>
+  </div>
+
+  <div class="container" id="frames">
+    <div class="section-title fancy-title"><span class="gradient-text">Frame Gallery • All Sizes</span></div>
+    <div class="gallery-grid">
+      <div class="frame-item"><img src="https://images.unsplash.com/photo-1621621667797-e06afc217fb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdlZGRpbmclMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D" alt="Wedding frame"><div class="frame-info"><h4>Royal Wedding Frame</h4><span class="size-badge">20x30 inch</span><p>Premium wood / acrylic</p></div></div>
+      <div class="frame-item"><img src="https://images.pexels.com/photos/32333371/pexels-photo-32333371.jpeg" alt="Birthday frame"><div class="frame-info"><h4>Birthday Bash Frame</h4><span class="size-badge">12x18 inch</span><p>Glossy finish</p></div></div>
+      <div class="frame-item"><img src="https://plus.unsplash.com/premium_photo-1661281339432-2521e2775419?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZhbWlseXxlbnwwfHwwfHx8MA%3D%3D" alt="Family portrait"><div class="frame-info"><h4>Family Portrait</h4><span class="size-badge">24x36 inch</span><p>Canvas stretch</p></div></div>
+      <div class="frame-item"><img src="https://plus.unsplash.com/premium_photo-1682097066897-209d0d9e9ae5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGhvdG9ncmFwaGVyfGVufDB8fDB8fHww" alt="Custom size"><div class="frame-info"><h4>Custom Sizes</h4><span class="size-badge">All dimensions</span><p>Metal / Wood / Acrylic</p></div></div>
+      <div class="frame-item"><img src="https://media.istockphoto.com/id/2216077620/photo/group-of-happy-graduates-holding-diplomas-outdoors-during-sunny-graduation-ceremony.webp?a=1&b=1&s=612x612&w=0&k=20&c=u4qL7PlN5UxxEhS3pjkz7k0wkwra3gIPjL3SRrvh0ms=" alt="Collage frame"><div class="frame-info"><h4>Collage Frame</h4><span class="size-badge">Multi size</span><p>Perfect for events</p></div></div>
+      <div class="frame-item"><img src="https://media.istockphoto.com/id/2248679773/photo/birthday-celebration-and-elegant-party-decoration-in-a-modern-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=bpUe2bAT6SBn6fhKthxl6E-fb60ztWFO5kf_3D5oy7s=" alt="Birthday special"><div class="frame-info"><h4>Birthday Special</h4><span class="size-badge">16x20 inch</span><p>Vibrant colors</p></div></div>
+    </div>
+  </div>
+
+  <div class="container" id="editing">
+    <div class="editing-premium">
+      <div style="flex:1"><h2 class="fancy-title" style="font-size:1.8rem"><i class="fas fa-film"></i> Cinematic <span class="gradient-text">Video Editing</span></h2><p>4K wedding trailers, birthday reels, color grading, transitions, sound design.</p><div class="badge-list"><span>Drone Shots</span><span>Slow Motion</span><span>Color Grading</span></div></div>
+      <div class="editing-img"><img src="https://images.unsplash.com/photo-1605826832916-d0ea9d6fe71e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZGVvJTIwZWRpdGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Video editing"></div>
+    </div>
+    <div class="editing-premium" style="background: #fff8f3;">
+      <div class="editing-img"><img src="https://images.unsplash.com/photo-1620674156044-52b714665d46?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvdG8lMjBlZGl0aW5nfGVufDB8fDB8fHww" alt="Photo editing"></div>
+      <div style="flex:1"><h2 class="fancy-title" style="font-size:1.8rem"><i class="fas fa-palette"></i> Pro <span class="gradient-text">Photo Editing</span></h2><p>High-end retouch, skin smoothing, background change, color correction.</p></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="offer-banner">
+      <i class="fas fa-certificate" style="font-size: 38px;"></i>
+      <h2 class="fancy-title">✨ All Frame Sizes Available ✨</h2>
+      <p>Book any photoshoot and get 15% off on video editing package + free 8x12 inch print.</p>
+      <a href="#contact" class="btn btn-primary" style="background: white; color:#C33764; margin-top:12px;">Grab Offer →</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-title fancy-title"><span class="gradient-text">Client Love</span></div>
+    <div class="testimonial-grid">
+      <div class="testi-card"><i class="fas fa-star"></i><p>"Nantha Studio gave us the most amazing wedding frames and video edit! Every size was perfect."</p><h4>- Divya & Karthik</h4></div>
+      <div class="testi-card"><i class="fas fa-star"></i><p>"Birthday shoot was so professional and the frames arrived in all sizes we requested."</p><h4>- Senthil Family</h4></div>
+      <div class="testi-card"><i class="fas fa-star"></i><p>"Best photo editing in town! They even restored old photos. Highly recommend."</p><h4>- Meena Raj</h4></div>
+    </div>
+  </div>
+
+  <div class="container" id="contact">
+    <div class="glass-card">
+      <h2 class="fancy-title">📞 Get In Touch <span class="gradient-text">Nantha Studio</span></h2>
+      <p style="margin: 8px 0;">Book your dream photoshoot or inquire about custom frames & editing</p>
+      <div class="input-group">
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <input type="tel" id="mobileInput" placeholder="Phone Number">
+        <button id="whatsappSendBtn" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Inquiry</button>
+      </div>
+      <p><i class="fas fa-shield-alt"></i> We respond within 30 minutes</p>
+    </div>
+  </div>
+</main>
+
+<div class="float-buttons">
+  <a href="https://wa.me/8012794429?text=Hi%20Nantha%20Studio!%20I%20would%20like%20to%20book%20a%20wedding%2Fbirthday%20shoot%20and%20know%20about%20frame%20sizes." class="float-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+918012794429" class="float-btn"><i class="fas fa-phone-alt"></i></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-flex">
+      <div><h3 class="fancy-title">✨ NANTHA PHOTO STUDIO</h3><p>Wedding • Birthday • All Events<br>Video Editing • Photo Editing • All Sizes Custom Frames</p></div>
+      <div><i class="fas fa-map-marker-alt"></i> 42, Gold Arcade, Coimbatore<br><i class="fas fa-envelope"></i> hello@nanthastudio.com<br><i class="fas fa-clock"></i> 9AM - 8PM (Mon-Sat)</div>
+      <div><i class="fab fa-instagram fa-2x" style="margin-right: 12px; color:#C33764;"></i><i class="fab fa-facebook fa-2x" style="margin-right: 12px; color:#C33764;"></i><i class="fab fa-youtube fa-2x" style="color:#C33764;"></i></div>
+    </div>
+    <hr style="margin: 30px 0 15px; border-color: #2c2c3a;">
+    <p style="text-align: center; font-size:0.8rem;">© 2025 Nantha Photo Studio — Every Frame, A Masterpiece. All Sizes Customized.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+  
+  // counter animation
+  const counters = document.querySelectorAll('.stat-number');
+  const startCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-count');
+      let current = 0;
+      const increment = target / 40;
+      const update = () => {
+        current += increment;
+        if(current < target) {
+          counter.innerText = Math.floor(current);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    });
+  };
+  const observer = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting) startCounters();
+  }, { threshold: 0.3 });
+  const statsSection = document.querySelector('.stats-row');
+  if(statsSection) observer.observe(statsSection);
+
+  // whatsapp inquiry
+  const whatsBtn = document.getElementById('whatsappSendBtn');
+  if(whatsBtn) {
+    whatsBtn.addEventListener('click', () => {
+      const name = document.getElementById('nameInput')?.value || 'Guest';
+      const mobile = document.getElementById('mobileInput')?.value || '';
+      let msg = `Hi Nantha Studio, I'm ${name}. I want to book a photoshoot (Wedding/Birthday/Event) and need frame size details.`;
+      if(mobile) msg += ` My number: ${mobile}`;
+      window.open(`https://wa.me/8012794429?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  }
+  
+  // frame click alert with animation effect
+  document.querySelectorAll('.frame-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const size = el.querySelector('.size-badge')?.innerText || 'all sizes';
+      const frameName = el.querySelector('h4')?.innerText || 'Frame';
+      alert(`✨ ${frameName} — Size: ${size} available. Contact us for custom framing!`);
+    });
+  });
+</script>
+</body>
+</html>
